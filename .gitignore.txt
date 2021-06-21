@@ -1,8 +1,0 @@
-client_ID_spotify.py
-
-client_ID_spotify.txt
-
-/.ipynb_checkpoints
-
-/.__pycache__
-
