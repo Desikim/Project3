@@ -1,31 +1,73 @@
+<img src="https://bit.ly/2VnXWr2" alt="Ironhack Logo" width="100"/>
 
 # Hot Music Recommender
+*Kim Desi*
 
-*Ironhack Data Analytics bootcamp Project 3*
+*Ironhack | May 2021*
 
-#### Project Description
+## Content
+- [Project Description](#project-description)
+- [Questions](#questions)
+- [Dataset](#dataset)
+- [Workflow](#workflow)
+- [Organization](#organization)
+- [Links](#links)
 
-Creating an algorithm that compares audio features of an input song to 2 databases with clusters containing different audio feature groups.
+## Project Description
 
-#### Workflow
+The goal of this project was to create a music recommender based on the [billboard hot 100](https://www.billboard.com/charts/hot-100) using a machine learning model. In the first step the music recommender should ask the user for a song title as input and then check whether the user input is in the current hot 100 or not. 
+- If it is, recommend another song that's currently in the top 100. 
+- If it's not, use a model trained on songs audio features to recommend a song that is similar to the user input 
 
-1. Create dataframe hot 100 songs 
-Scrape website of hottest 100 music (link)
-Restructure HTML into dataframe with hot 100 songs and artists
-Get the audio features of the hot 100 songs and add to dataframe
-     
-2. Create dataframe out of huge playlist(s) using spotipy
-Gather information in dataframe
-Get the audio features of the spotify playlist and add to dataframe
-     
-3. Train a model (algorithm) 
-Using clustering method of audio feats
-Calculating optimal number of clusters (k)
-Using model to suggest songs in step 4
+The recommendation is made by clustering the audio features of the dataset by similarity, using the K-means algorithm. 
+
+## Questions 
+
+Starting this project I already had some questions, which only increased as soon as I started!  
+- How can you recommend music based on the user inputs song?
+- Which audio features are logical to use in the recommendation model and lead to good performance?
+- How can I improve a machine learning model like this, which approaches are there?
+
+## Dataset
+
+To be able to check wheter the user input is part of the hot 100, a dataset of the current hot 100 song titles is needed. The data was obtained by web scraping the [hot 100](https://www.billboard.com/charts/hot-100) website and formatting it into a dataframe. To be able to recommend songs based on audio features, a dataset of songs and their audio features is needed. In this case I used Spotify's API to obtain data about songs and their adio features and stored them into a dataframe. 
+
+## Workflow
+
+1. Project plan 
+- think about what to do and how to do it
+- create different notebooks for different purposes
+- set up folder structure in repository
+
+2. Web scraping billboard hot 100
+- scrape and format HTML of the website
+- store data in dataframes/csv files
+
+3. Spotify API
+- setting up authentification to use spotipy
+- obtain audio features of the hot 100
+- obtain audio features of a playlist to create data for training the model
+- store data in dataframes/csv files
+
+4. Machine learning model
+- prepare the data for the model to ensure optimal performance
+- find optimal amount of clusters
+- create new dataframes containing new information about which clusters songs belong to
+- store data in dataframes/csv files and model using pickle
  
-4. Create function to check if user input = hot 100
-If yes, suggest another song of hot 100 with similar audio feat
-If not, suggest another song with similar audio feat by any artist & popularity
-     
-   
+5. Hot music recommender
+- create function including user input and recommendation 
+- test the recommender!
+
+6. Revisit & improve
+- revisit project and add information/comments in code
+- improve code
+
+## Organization   
+
+
+## Links
+
+[Repository](https://github.com/Desikim/Project_3)  
+
  
